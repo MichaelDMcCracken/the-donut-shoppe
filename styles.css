@@ -1,0 +1,221 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body,
+html {
+    height: 100%;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Navbar Styles */
+/* Navbar Styles */
+.navbar {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    padding: 1.5rem 20px;
+    background-color: transparent;
+    color: white;
+    z-index: 1000;
+    /* Make sure the navbar stays on top */
+    transition: background-color 0.3s ease;
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: center;
+    /* Centers the items horizontally */
+    align-items: center;
+    /* Centers the items vertically */
+    width: 100%;
+    /* Ensure full width */
+    height: 100%;
+    /* Ensure it takes up the full height of the navbar */
+    position: relative;
+    /* Relative positioning for the elements */
+}
+
+.navbar-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    /* Horizontally centers the navbar links */
+    gap: 20px;
+    /* Space between the links */
+    transition: opacity 0.5s ease-in-out;
+    opacity: 1;
+    visibility: visible;
+    /* font-weight: 100; */
+}
+
+.navbar-links li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    font-weight: 200;
+    /* Make the text uppercase */
+}
+
+.navbar-links li {
+    padding: 0 1rem;
+}
+
+.hero h1 {
+    font-size: 8rem;
+    font-family: 'Dancing Script', cursive;
+    font-weight: 700;
+}
+
+.hero p {
+    font-size: 1.5rem;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #662193;
+    padding: 1.5rem;
+    margin-top: 1rem;
+    border-radius: 10rem;
+    box-shadow: #00000044 0px 0px 50px 5px;
+}
+
+a .btn {
+    color: #fff;
+    font-weight: 300;
+}
+
+i {
+    vertical-align: middle;
+}
+
+.donuts {
+    display: flex;
+    width: 75%;
+    margin: 0 auto;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.flavor {
+    padding: 1rem;
+    background-color: #662193;
+    /* background-image: url('https://images.pexels.com/photos/1191639/pexels-photo-1191639.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'); */
+    /* background-size: cover; */
+    /* background-repeat: none; */
+    /* background-position: center; */
+    color: #fff;
+    border-radius: 0.5rem;
+}
+
+/* Hamburger Icon (Mobile Only) */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    z-index: 1100;
+    /* Ensure it stays on top */
+    transition: transform 0.3s ease;
+    /* Smooth transition for the hamburger icon */
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px 0;
+}
+
+/* Full-screen Image Section (Hero) */
+.hero {
+    background-image: url('./images/donuts1.jpg');
+    /* Updated image */
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    /* Full height of the viewport */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+
+/* Content Section Below Hero */
+.content {
+    padding: 50px 20px;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+.content h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.content p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* Mobile Responsiveness: Media Queries */
+@media screen and (max-width: 768px) {
+
+    /* Navbar Links (Mobile) */
+    .navbar-links {
+        display: none;
+        /* Initially hidden */
+        position: absolute;
+        top: 100%;
+        /* Dropdown below the navbar */
+        left: 0;
+        width: 100%;
+        padding: 10px 0;
+        opacity: 0;
+        gap: 1rem;
+        /* Hidden by default */
+        visibility: hidden;
+        /* Prevent interaction when hidden */
+    }
+
+    .navbar-links li {
+        /* margin: 10px 0; */
+        background-color: transparent;
+        /* Remove background from individual list items */
+    }
+
+    /* When the menu is active, show the links with fade-in effect */
+    .navbar-links.active {
+        display: flex;
+        /* Show links in a vertical stack */
+        flex-direction: column;
+        align-items: center;
+        opacity: 1;
+        /* Fade in */
+        visibility: visible;
+        /* Make them interactive */
+    }
+
+    /* Hamburger icon on mobile */
+    .hamburger {
+        display: flex;
+        /* Show hamburger icon on small screens */
+    }
+
+    /* Adjust navbar links appearance on small screens */
+    .navbar-links li a {
+        font-size: 1rem;
+        /* Larger text size for easier touch interaction */
+        padding: 10px;
+        color: white;
+        text-decoration: none;
+        text-transform: uppercase;
+        /* Ensure text is uppercase on mobile too */
+    }
+}
