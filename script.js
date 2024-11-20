@@ -3,8 +3,8 @@ const navbar = document.getElementById('navbar');
 
 // Listen for scroll events
 window.onscroll = function () {
-    if (window.scrollY > 0) {
-        navbar.style.backgroundColor = '#551082BB';  // Solid color when scrolled
+    if (window.scrollY > 200) {
+        navbar.style.backgroundColor = '#551082';  // Solid color when scrolled
     } else {
         navbar.style.backgroundColor = 'transparent';  // Transparent when at top
     }
